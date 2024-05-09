@@ -52,11 +52,9 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable String id) {
+    public void deleteEmployee(@PathVariable String id) {
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
-
-        employeeRepository.delete(employee);
-        return "el empleado a sido borrado";
+                employeeRepository.delete(employee);
     }
 }
