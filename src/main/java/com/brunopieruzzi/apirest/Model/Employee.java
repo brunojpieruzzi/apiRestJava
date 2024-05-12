@@ -12,9 +12,8 @@ import lombok.Data;
 @Builder
 public class Employee {
 
-    @Id
+    @id
     private String id;
-    @Field(name = "employee_name")
     private String name;
     private String surname;
     private int dni;
